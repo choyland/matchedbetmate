@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using MatchedBetMate.Business.Interfaces.Providers;
-using MatchedBetMate.Business.Interfaces.Services;
+using MatchedBetMate.iOS.Business.Interfaces.Providers;
+using MatchedBetMate.iOS.Business.Interfaces.Services;
 
 namespace MatchedBetMate.iOS.Infrastructure.Providers
 {
@@ -21,5 +21,8 @@ namespace MatchedBetMate.iOS.Infrastructure.Providers
                 return new KeyValuePair<string, string>("Authorization", $"Bearer {token}");
             }
         }
+
+        public string GetBetsResource { get; }
+        public string CreateBetResource { get; }
     }
 }

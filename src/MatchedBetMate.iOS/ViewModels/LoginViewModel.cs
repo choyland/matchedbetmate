@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
-using MatchedBetMate.Business.Enum;
-using MatchedBetMate.Business.Interfaces.Services;
+using MatchedBetMate.iOS.Business.Enum;
+using MatchedBetMate.iOS.Business.Interfaces.Services;
 using MatchedBetMate.iOS.Infrastructure.IoC;
 using MatchedBetMate.iOS.ViewModels.Base;
 using MatchedBetMate.iOS.ViewModels.Interfaces;

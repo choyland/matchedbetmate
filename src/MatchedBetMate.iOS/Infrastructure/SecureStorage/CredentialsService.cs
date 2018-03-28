@@ -1,5 +1,5 @@
 ﻿using Foundation;
-using MatchedBetMate.Business.Interfaces.Services;
+using MatchedBetMate.iOS.Business.Interfaces.Services;
 using Security;
 
 namespace MatchedBetMate.iOS.Infrastructure.SecureStorage

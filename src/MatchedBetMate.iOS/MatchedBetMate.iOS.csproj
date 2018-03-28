@@ -85,6 +85,7 @@
     <Reference Include="FubarCoder.RestSharp.Portable.HttpClient, Version=4.0.0.0, Culture=neutral, PublicKeyToken=be81bb0f53eab22f, processorArchitecture=MSIL">
       <HintPath>..\packages\FubarCoder.RestSharp.Portable.HttpClient.4.0.8\lib\xamarinios10\FubarCoder.RestSharp.Portable.HttpClient.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -104,6 +105,7 @@
       <HintPath>..\packages\PInvoke.Windows.Core.0.3.2\lib\portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10\PInvoke.Windows.Core.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.IO.Compression" />
     <Reference Include="System.Json" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Runtime.Serialization" />
@@ -195,9 +197,17 @@
     <Compile Include="ViewModels\LoginViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MatchedBetMate.Business\MatchedBetMate.Business.csproj">
-      <Project>{083E0FD0-CDD4-4DC4-9FF9-A6676F94CC42}</Project>
-      <Name>MatchedBetMate.Business</Name>
+    <ProjectReference Include="..\MatchedBetMate.DTO\MatchedBetMate.DTO.csproj">
+      <Project>{48339BB4-E913-47D8-B350-CC906E635C96}</Project>
+      <Name>MatchedBetMate.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MatchedBetMate.iOS.Business\MatchedBetMate.iOS.Business.csproj">
+      <Project>{b035eadc-d118-449e-8b19-741141ceb748}</Project>
+      <Name>MatchedBetMate.iOS.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MatchedBetMate.iOS.Model\MatchedBetMate.iOS.Model.csproj">
+      <Project>{1C31EB9C-B138-4552-AB4D-7CC3D454D333}</Project>
+      <Name>MatchedBetMate.iOS.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

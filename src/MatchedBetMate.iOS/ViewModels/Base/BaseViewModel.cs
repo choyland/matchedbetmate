@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Diagnostics;
-using System.IO;
-using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace MatchedBetMate.iOS.ViewModels.Base
@@ -19,6 +17,7 @@ namespace MatchedBetMate.iOS.ViewModels.Base
             catch (Exception ex)
             {
                 Debug.Write(ex.Message);
+                success = false;
             }
 
             return success;

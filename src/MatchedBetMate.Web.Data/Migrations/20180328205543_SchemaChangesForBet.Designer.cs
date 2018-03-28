@@ -12,9 +12,10 @@ using System;
 namespace MatchedBetMate.WebApi.Data.Migrations
 {
     [DbContext(typeof(MatchedBetMateDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180328205543_SchemaChangesForBet")]
+    partial class SchemaChangesForBet
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

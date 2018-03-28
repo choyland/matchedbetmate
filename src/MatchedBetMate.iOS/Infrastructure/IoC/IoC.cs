@@ -1,7 +1,7 @@
-﻿using MatchedBetMate.Business.Interfaces.Clients;
-using MatchedBetMate.Business.Interfaces.Providers;
-using MatchedBetMate.Business.Interfaces.Services;
-using MatchedBetMate.Business.Services;
+﻿using MatchedBetMate.iOS.Business.Interfaces.Clients;
+using MatchedBetMate.iOS.Business.Interfaces.Providers;
+using MatchedBetMate.iOS.Business.Interfaces.Services;
+using MatchedBetMate.iOS.Business.Services;
 using MatchedBetMate.iOS.Infrastructure.Clients;
 using MatchedBetMate.iOS.Infrastructure.Providers;
 using MatchedBetMate.iOS.Infrastructure.SecureStorage;

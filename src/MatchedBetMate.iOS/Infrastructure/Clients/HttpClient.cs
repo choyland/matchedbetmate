@@ -1,10 +1,10 @@
 ﻿using System.Net.Http;
 using System.Threading.Tasks;
-using MatchedBetMate.Business.Interfaces.Providers;
+using MatchedBetMate.iOS.Business.Interfaces.Providers;
 using MatchedBetMate.iOS.Infrastructure.Reachability.Enum;
 using RestSharp.Portable;
 using RestSharp.Portable.HttpClient;
-using IHttpClient = MatchedBetMate.Business.Interfaces.Clients.IHttpClient;
+using IHttpClient = MatchedBetMate.iOS.Business.Interfaces.Clients.IHttpClient;
 
 namespace MatchedBetMate.iOS.Infrastructure.Clients
 {
