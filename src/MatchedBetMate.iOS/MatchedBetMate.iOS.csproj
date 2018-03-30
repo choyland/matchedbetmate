@@ -193,6 +193,7 @@
       <DependentUpon>ValidatedTextField.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\Base\BaseViewModel.cs" />
+    <Compile Include="ViewModels\CalculateViewModel.cs" />
     <Compile Include="ViewModels\Interfaces\IMatchedBetMateViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
   </ItemGroup>
