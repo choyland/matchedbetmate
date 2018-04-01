@@ -26,9 +26,10 @@ namespace MatchedBetMate.iOS.Infrastructure.Clients
                 AddAuthorizationHeader(request);
             }
 
-            using (var client = new RestClient("http://192.10.10.56:60702/"))
+            using (var client = GetClient())
             {
                 var response = await client.Execute<TResponse>(request).ConfigureAwait(false);
+                CheckResponse(response);
                 return response.Data;
             }
         }
@@ -46,9 +47,10 @@ namespace MatchedBetMate.iOS.Infrastructure.Clients
 
             request.AddJsonBody(requestContract);
 
-            using (var client = new RestClient("http://192.10.10.56:60702/"))
+            using (var client = GetClient())
             {
                 var response = await client.Execute<TResponse>(request);
+                CheckResponse(response);
                 return response.Data;
             }
         }
@@ -66,10 +68,29 @@ namespace MatchedBetMate.iOS.Infrastructure.Clients
 
             request.AddJsonBody(requestContract);
 
-            using (var client = new RestClient("http://192.10.10.56:60702/"))
+            using (var client = GetClient())
             {
                 var response = await client.Execute<TResponse>(request);
+                CheckResponse(response);
                 return response.Data;
+            }
+        }
+
+        public async Task ExecuteDeleteRequest(string resource, bool isAuthenticated)
+        {
+            CheckNetwork();
+
+            var request = new RestRequest(resource, Method.DELETE);
+
+            if (isAuthenticated)
+            {
+                AddAuthorizationHeader(request);
+            }
+
+            using (var client = GetClient())
+            {
+                var response = await client.Execute(request);
+                CheckResponse(response);
             }
         }
 
@@ -87,6 +108,19 @@ namespace MatchedBetMate.iOS.Infrastructure.Clients
             {
                 throw new HttpRequestException("No network");
             }
+        }
+
+        private void CheckResponse(IRestResponse response)
+        {
+            if (!response.IsSuccess)
+            {
+                throw new HttpRequestException($"There was an error processing the request - status code: {response.StatusCode} - {response.StatusDescription}");
+            }
+        }
+
+        private RestClient GetClient()
+        {
+            return new RestClient(_webApiConfigurationProvider.BaseUrl);
         }
     }
 }

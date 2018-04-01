@@ -22,7 +22,9 @@ namespace MatchedBetMate.iOS.Infrastructure.Providers
             }
         }
 
-        public string GetBetsResource { get; }
-        public string CreateBetResource { get; }
+        public string GetBetsResourceUrl { get; }
+        public string CreateBetResourceUrl { get; }
+        public string UpdateBetResourceUrl { get; }
+        public string DeleteBetResourceUlr { get; }
     }
 }

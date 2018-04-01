@@ -8,5 +8,6 @@ namespace MatchedBetMate.iOS.Business.Interfaces.Services
     {
         Task<List<BetViewModel>> GetBets();
         Task<bool> AddBet(BetViewModel newBet);
+        Task<bool> UpdateBet(BetViewModel betToUpdate);
     }
 }

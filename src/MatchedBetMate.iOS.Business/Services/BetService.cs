@@ -23,7 +23,7 @@ namespace MatchedBetMate.iOS.Business.Services
 
         public async Task<List<BetViewModel>> GetBets()
         {
-            var bets = await _httpClient.ExecuteGetRequest<List<BetDto>>(_configProvider.GetBetsResource, true);
+            var bets = await _httpClient.ExecuteGetRequest<List<BetDto>>(_configProvider.GetBetsResourceUrl, true);
 
             var betViewModels = new List<BetViewModel>();
 
@@ -41,9 +41,34 @@ namespace MatchedBetMate.iOS.Business.Services
             var betDto = new CreateBetDto();
 
             var successfullyCreatedBet = await
-                _httpClient.ExecutePostRequest<CreateBetDto, BetDto>(betDto, _configProvider.CreateBetResource, true);
+                _httpClient.ExecutePostRequest<CreateBetDto, BetDto>(betDto, _configProvider.CreateBetResourceUrl, true);
 
             return successfullyCreatedBet != null;
+        }
+
+        public async Task<bool> UpdateBet(BetViewModel betToUpdate)
+        {
+            if (betToUpdate == null) return false;
+
+            // TODO Map BetViewModel to UpdateBetDto
+            var updateBetDto = new UpdateBetDto();
+
+            var updateResourceUrl = $"{_configProvider.UpdateBetResourceUrl}/{betToUpdate.Id}";
+
+            var updatedBet = await _httpClient.ExecutePostRequest<UpdateBetDto, BetDto>(updateBetDto, updateResourceUrl, true);
+
+            return updatedBet != null;
+        }
+
+        public async Task<bool> DeleteBet(BetViewModel betToDelete)
+        {
+            if (betToDelete == null) return false;
+
+            var deleteBetResourceUrl = $"{_configProvider.DeleteBetResourceUlr}/{betToDelete.Id}";
+
+            await _httpClient.ExecuteDeleteRequest(deleteBetResourceUrl, true);
+
+            return true;
         }
     }
 }
