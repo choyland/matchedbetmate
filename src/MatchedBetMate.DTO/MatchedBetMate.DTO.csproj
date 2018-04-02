@@ -4,13 +4,4 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Reference Include="Microsoft.Extensions.Identity.Stores">
-      <HintPath>C:\Users\charl\.nuget\packages\microsoft.extensions.identity.stores\2.0.0\lib\netstandard2.0\Microsoft.Extensions.Identity.Stores.dll</HintPath>
-    </Reference>
-    <Reference Include="System.ComponentModel.Annotations">
-      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETPortable\v4.6\Profile\Profile44\System.ComponentModel.Annotations.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
 </Project>

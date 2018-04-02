@@ -4,7 +4,7 @@ VisualStudioVersion = 15.0.26730.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatchedBetMate.iOS", "MatchedBetMate.iOS\MatchedBetMate.iOS.csproj", "{EF368DBC-D6BB-4F59-8C24-785BE52D022B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MatchedBetMate.WebApi", "MatchedBetMate.WebApi\MatchedBetMate.WebApi.csproj", "{5F3EE740-BDA5-41EE-AC18-3EDA65A346DD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatchedBetMate.WebApi", "MatchedBetMate.WebApi\MatchedBetMate.WebApi.csproj", "{5F3EE740-BDA5-41EE-AC18-3EDA65A346DD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "iOS", "iOS", "{0234EECD-705D-4B43-A74E-6C1A5DC4C0EE}"
 EndProject
@@ -12,11 +12,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{0355C0
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApi", "WebApi", "{FBC4DC22-5E49-4B8D-BDA3-4CAFCBA7D5DF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MatchedBetMate.DTO", "MatchedBetMate.DTO\MatchedBetMate.DTO.csproj", "{48339BB4-E913-47D8-B350-CC906E635C96}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatchedBetMate.DTO", "MatchedBetMate.DTO\MatchedBetMate.DTO.csproj", "{48339BB4-E913-47D8-B350-CC906E635C96}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MatchedBetMate.WebApi.Data", "MatchedBetMate.Web.Data\MatchedBetMate.WebApi.Data.csproj", "{4B927DFF-BA08-4EBF-93F9-6BAB59101975}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatchedBetMate.WebApi.Data", "MatchedBetMate.Web.Data\MatchedBetMate.WebApi.Data.csproj", "{4B927DFF-BA08-4EBF-93F9-6BAB59101975}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MatchedBetMate.WebApi.Business", "MatchedBetMate.Web.Business\MatchedBetMate.WebApi.Business.csproj", "{CB2774D3-D582-46FE-A2F0-AE4335B4BEC1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatchedBetMate.WebApi.Business", "MatchedBetMate.Web.Business\MatchedBetMate.WebApi.Business.csproj", "{CB2774D3-D582-46FE-A2F0-AE4335B4BEC1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatchedBetMate.iOS.Business", "MatchedBetMate.iOS.Business\MatchedBetMate.iOS.Business.csproj", "{B035EADC-D118-449E-8B19-741141CEB748}"
 EndProject
@@ -42,6 +42,7 @@ Global
 		{EF368DBC-D6BB-4F59-8C24-785BE52D022B}.Release|iPhone.Build.0 = Release|iPhone
 		{EF368DBC-D6BB-4F59-8C24-785BE52D022B}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
 		{EF368DBC-D6BB-4F59-8C24-785BE52D022B}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{EF368DBC-D6BB-4F59-8C24-785BE52D022B}.Debug|Any CPU.Build.0 = Debug|iPhoneSimulator
 		{5F3EE740-BDA5-41EE-AC18-3EDA65A346DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5F3EE740-BDA5-41EE-AC18-3EDA65A346DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F3EE740-BDA5-41EE-AC18-3EDA65A346DD}.Debug|iPhone.ActiveCfg = Debug|Any CPU

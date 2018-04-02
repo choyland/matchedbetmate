@@ -18,6 +18,9 @@ namespace MatchedBetMate.iOS.ViewModels
 
         public async Task<bool> Login(string email, string password)
         {
+            // TEMP
+            return true;
+
             if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
             {
                 return false;
@@ -25,10 +28,7 @@ namespace MatchedBetMate.iOS.ViewModels
 
             LoginStatus? loginStatus = null;
 
-            await ExecuteWithNetworkHandling(async () =>
-            {
-                loginStatus = await _authenticationService.Login(email, password);
-            });
+            loginStatus = await _authenticationService.Login(email, password);
 
             return loginStatus != null && loginStatus == LoginStatus.Success;
         }

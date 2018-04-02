@@ -191,6 +191,13 @@
                                 <rect key="frame" x="16" y="293" width="343" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ldr-U6-yP0">
+                                <rect key="frame" x="16" y="290" width="343" height="3"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="3" id="h2n-Yi-NMC"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="roP-Mx-Sw1">
                                 <rect key="frame" x="46" y="323" width="283" height="134"/>
                                 <subviews>
@@ -284,13 +291,21 @@
                                     <constraint firstAttribute="trailing" secondItem="xCo-rK-aUo" secondAttribute="trailing" id="yPT-6Q-Lvp"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ldr-U6-yP0">
-                                <rect key="frame" x="16" y="290" width="343" height="3"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="3" id="h2n-Yi-NMC"/>
-                                </constraints>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mEA-Dp-mkS">
+                                <rect key="frame" x="16" y="457" width="343" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BhM-BM-bdK">
+                                <rect key="frame" x="127" y="487" width="120" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="2JH-CQ-qXu"/>
+                                    <constraint firstAttribute="width" constant="120" id="g0a-Qs-SQn"/>
+                                </constraints>
+                                <state key="normal" title="Add Bet"/>
+                                <connections>
+                                    <action selector="AddBetButton_TouchUpInside:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="2RE-cC-FM3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -298,10 +313,10 @@
                             <constraint firstItem="jQs-YS-P1G" firstAttribute="leading" secondItem="MT5-57-mSr" secondAttribute="leading" id="2cx-c1-5g0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="roP-Mx-Sw1" secondAttribute="trailing" constant="30" id="4e0-Uh-QwA"/>
                             <constraint firstItem="1BU-vj-Us4" firstAttribute="top" secondItem="WaD-cF-oPV" secondAttribute="bottom" id="72h-3H-C0p"/>
+                            <constraint firstItem="mEA-Dp-mkS" firstAttribute="trailing" secondItem="MT5-57-mSr" secondAttribute="trailing" id="7vn-nE-cyF"/>
                             <constraint firstItem="Kln-st-XpO" firstAttribute="top" secondItem="MT5-57-mSr" secondAttribute="bottom" id="8gg-Kl-Ogf"/>
                             <constraint firstItem="UuG-mJ-QAI" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" constant="30" id="8nh-ti-0pi"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Kln-st-XpO" secondAttribute="trailing" constant="30" id="9mJ-Fl-gbJ"/>
-                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="roP-Mx-Sw1" secondAttribute="bottom" constant="161" id="AqF-Qv-q3u"/>
                             <constraint firstItem="Vxs-h4-5Tk" firstAttribute="trailing" secondItem="MT5-57-mSr" secondAttribute="trailing" id="Cjx-ld-yDZ"/>
                             <constraint firstItem="WaD-cF-oPV" firstAttribute="leading" secondItem="MT5-57-mSr" secondAttribute="leading" id="CvY-y1-dOT"/>
                             <constraint firstItem="roP-Mx-Sw1" firstAttribute="top" secondItem="jQs-YS-P1G" secondAttribute="bottom" id="Dj5-dY-3rS"/>
@@ -315,10 +330,16 @@
                             <constraint firstItem="jQs-YS-P1G" firstAttribute="trailing" secondItem="MT5-57-mSr" secondAttribute="trailing" id="Qvz-zW-wVf"/>
                             <constraint firstItem="Ldr-U6-yP0" firstAttribute="top" secondItem="Vxs-h4-5Tk" secondAttribute="bottom" id="SuJ-b3-5L0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ldr-U6-yP0" secondAttribute="trailing" id="TFw-Pr-KQV"/>
+                            <constraint firstItem="BhM-BM-bdK" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="WpP-Nh-zpf"/>
+                            <constraint firstItem="mEA-Dp-mkS" firstAttribute="leading" secondItem="MT5-57-mSr" secondAttribute="leading" id="Wxr-SI-xrJ"/>
                             <constraint firstItem="1BU-vj-Us4" firstAttribute="trailing" secondItem="Kln-st-XpO" secondAttribute="trailing" id="Wzc-vd-84E"/>
                             <constraint firstItem="UuG-mJ-QAI" firstAttribute="top" secondItem="QS5-Rx-YEW" secondAttribute="top" constant="50" id="YSH-Rp-pyh"/>
                             <constraint firstItem="WaD-cF-oPV" firstAttribute="trailing" secondItem="MT5-57-mSr" secondAttribute="trailing" id="YjS-C9-hEu"/>
                             <constraint firstItem="vKy-5Z-nOG" firstAttribute="height" secondItem="MT5-57-mSr" secondAttribute="height" id="bGd-OF-WeW"/>
+                            <constraint firstItem="mEA-Dp-mkS" firstAttribute="top" secondItem="roP-Mx-Sw1" secondAttribute="bottom" id="bYI-w6-JQo"/>
+                            <constraint firstItem="mEA-Dp-mkS" firstAttribute="width" secondItem="MT5-57-mSr" secondAttribute="width" id="g1g-ab-FG8"/>
+                            <constraint firstItem="BhM-BM-bdK" firstAttribute="top" secondItem="mEA-Dp-mkS" secondAttribute="bottom" id="gdd-NR-Skv"/>
+                            <constraint firstItem="mEA-Dp-mkS" firstAttribute="height" secondItem="MT5-57-mSr" secondAttribute="height" id="hvu-EL-WG1"/>
                             <constraint firstItem="MT5-57-mSr" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="jml-HO-8bu"/>
                             <constraint firstItem="Ldr-U6-yP0" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="kBR-O9-3Mc"/>
                             <constraint firstItem="MT5-57-mSr" firstAttribute="trailing" secondItem="QS5-Rx-YEW" secondAttribute="trailingMargin" id="lbs-BN-lvp"/>
@@ -331,6 +352,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Calculate" image="Second" id="cPa-gy-q4n"/>
                     <connections>
+                        <outlet property="AddBetButton" destination="BhM-BM-bdK" id="qIv-sQ-HlK"/>
                         <outlet property="BackCalcView" destination="Kln-st-XpO" id="nXK-A9-ghm"/>
                         <outlet property="BackOddsInput" destination="EEn-JC-QsQ" id="gWh-cf-Q7V"/>
                         <outlet property="BackOddsLabel" destination="Odf-gH-lJc" id="l03-uF-tme"/>
@@ -355,6 +377,7 @@
                         <outlet property="SpacerViewFive" destination="vKy-5Z-nOG" id="gEA-9c-Ytb"/>
                         <outlet property="SpacerViewFour" destination="jQs-YS-P1G" id="rRu-dc-GGV"/>
                         <outlet property="SpacerViewOne" destination="MT5-57-mSr" id="GOh-wv-2V5"/>
+                        <outlet property="SpacerViewSix" destination="mEA-Dp-mkS" id="SjC-yl-5rp"/>
                         <outlet property="SpacerViewThree" destination="Vxs-h4-5Tk" id="JZe-Hp-wEz"/>
                         <outlet property="SpacerViewTwo" destination="WaD-cF-oPV" id="zgm-Ct-lET"/>
                     </connections>

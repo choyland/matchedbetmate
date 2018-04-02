@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using MatchedBetMate.DTO.Enum;
 using MatchedBetMate.iOS.Business.Interfaces.Services;
+using MatchedBetMate.iOS.Infrastructure.IoC;
 using MatchedBetMate.iOS.Model.ViewModel;
 using MatchedBetMate.iOS.ViewModels.Base;
 using MatchedBetMate.iOS.ViewModels.Interfaces;
@@ -13,10 +14,10 @@ namespace MatchedBetMate.iOS.ViewModels
         private readonly IBetCalculationService _betCalculationService;
         private readonly IBetService _betService;
 
-        public CalculateViewModel(IBetCalculationService betCalculationService, IBetService betService)
+        public CalculateViewModel()
         {
-            _betCalculationService = betCalculationService;
-            _betService = betService;
+            _betCalculationService = IoC.Container.Resolve<IBetCalculationService>();;
+            _betService = IoC.Container.Resolve<IBetService>();
         }
 
         public BetCalculationViewModel CalculateBet(BetType betType, double backStake, double backOdds, double layOdds,
