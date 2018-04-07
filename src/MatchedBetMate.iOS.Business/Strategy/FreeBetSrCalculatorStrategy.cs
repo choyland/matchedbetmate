@@ -8,7 +8,7 @@ namespace MatchedBetMate.iOS.Business.Strategy
     {
         public BetType BetType => BetType.FreeBetSr;
 
-        public BetCalculationModel Calculate(double backStake, double backOdds, double layOdds, double layCommission)
+        public BetCalculationModel Calculate(decimal backStake, decimal backOdds, decimal layOdds, decimal layCommission)
         {
             var optimalLayStake = backOdds / (layOdds - layCommission) * backStake;
 

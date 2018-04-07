@@ -20,8 +20,8 @@ namespace MatchedBetMate.iOS.ViewModels
             _betService = IoC.Container.Resolve<IBetService>();
         }
 
-        public BetCalculationViewModel CalculateBet(BetType betType, double backStake, double backOdds, double layOdds,
-            double layCommission)
+        public BetCalculationViewModel CalculateBet(BetType betType, decimal backStake, decimal backOdds, decimal layOdds,
+            decimal layCommission)
         {
             var betCalcViewModel =
                 _betCalculationService.CalculateBet(betType, backStake, backOdds, layOdds, layCommission);

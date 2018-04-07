@@ -1,4 +1,5 @@
-﻿using Foundation;
+﻿using System;
+using Foundation;
 using MatchedBetMate.iOS.Business.Interfaces.Services;
 using Security;
 
@@ -10,62 +11,70 @@ namespace MatchedBetMate.iOS.Infrastructure.SecureStorage
 
         public string AuthToken
         {
-            get;
-            set;
-            //get => GetCredential(AuthTokenKey);
-            //set => SaveCredentials(AuthTokenKey, value);
+            get => ValueForKey(AuthTokenKey);
+            set => SetValueForKey(value, AuthTokenKey);
         }
 
-        public void DeleteCredentials()
+        public string ValueForKey(string key)
         {
-            var queryRecord = new SecRecord(SecKind.GenericPassword)
-            {
-                Generic = NSData.FromString(AuthTokenKey)
-            };
+            var record = ExistingRecordForKey(key);
+            var match = SecKeyChain.QueryAsRecord(record, out var resultCode);
 
-            var matchedRecord = SecKeyChain.QueryAsRecord(queryRecord, out var result);
-            if (result == SecStatusCode.Success)
+            return resultCode == SecStatusCode.Success ? NSString.FromData(match.ValueData, NSStringEncoding.UTF8) : string.Empty;
+        }
+
+        public void SetValueForKey(string value, string key)
+        {
+            var record = ExistingRecordForKey(key);
+            if (string.IsNullOrEmpty(value))
             {
-                SecKeyChain.Remove(matchedRecord);
+                if (!string.IsNullOrEmpty(ValueForKey(key)))
+                    RemoveRecord(record);
+
+                return;
+            }
+
+            // if the key already exists, remove it
+            if (!string.IsNullOrEmpty(ValueForKey(key)))
+                RemoveRecord(record);
+
+            var result = SecKeyChain.Add(CreateRecordForNewKeyValue(key, value));
+            if (result != SecStatusCode.Success)
+            {
+                throw new Exception($"Error adding record: {result}");
             }
         }
 
-        private static void SaveCredentials(string key, string value)
+        private static SecRecord CreateRecordForNewKeyValue(string key, string value)
         {
-            var queryRecord = new SecRecord(SecKind.GenericPassword)
+            return new SecRecord(SecKind.GenericPassword)
             {
-                Generic = NSData.FromString(key)
+                Account = key,
+                Service = "MatchedBetMate",
+                Label = key,
+                ValueData = NSData.FromString(value, NSStringEncoding.UTF8),
             };
-
-            var matchedRecord = SecKeyChain.QueryAsRecord(queryRecord, out var result);
-            if (result == SecStatusCode.Success)
-            {
-                var updated = matchedRecord;
-                updated.ValueData = value;
-
-                SecKeyChain.Update(queryRecord, updated);
-            }
-            else
-            {
-                var newRecord = new SecRecord(SecKind.GenericPassword)
-                {
-                    ValueData = value,
-                    Generic = key
-                };
-
-                SecKeyChain.Add(newRecord);
-            }
         }
 
-        private static string GetCredential(string key)
+        private static SecRecord ExistingRecordForKey(string key)
         {
-            var record = new SecRecord(SecKind.GenericPassword)
+            return new SecRecord(SecKind.GenericPassword)
             {
-                Generic = NSData.FromString(key)
+                Account = key,
+                Service = "MatchedBetMate",
+                Label = key,
             };
+        }
 
-            var matched = SecKeyChain.QueryAsRecord(record, out var result);
-            return result != SecStatusCode.Success ? null : matched.ValueData.ToString();
+        private static bool RemoveRecord(SecRecord record)
+        {
+            var result = SecKeyChain.Remove(record);
+            if (result != SecStatusCode.Success)
+            {
+                throw new Exception($"Error removing record: {result}");
+            }
+
+            return true;
         }
     }
 }

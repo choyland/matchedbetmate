@@ -3,6 +3,5 @@
     public interface ICredentialsService
     {
         string AuthToken { get; set; }
-        void DeleteCredentials();
     }
 }

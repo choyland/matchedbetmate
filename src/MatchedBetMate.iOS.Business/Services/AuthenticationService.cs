@@ -28,7 +28,7 @@ namespace MatchedBetMate.iOS.Business.Services
             
             if (response == null) return LoginStatus.Failure;
 
-            _credentialsService.AuthToken = response.ToString();
+            _credentialsService.AuthToken = response;
 
             return LoginStatus.Success;
         }

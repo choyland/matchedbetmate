@@ -16,8 +16,8 @@ namespace MatchedBetMate.iOS.Business.Services
             _betCalcaulatorStrategyFactory = betCalcaulatorStrategyFactory;
         }
 
-        public BetCalculationViewModel CalculateBet(BetType betType, double backStake, double backOdds, double layOdds,
-            double layCommission)
+        public BetCalculationViewModel CalculateBet(BetType betType, decimal backStake, decimal backOdds, decimal layOdds,
+            decimal layCommission)
         {
             var decimalLayCommission = layCommission / 100;
 

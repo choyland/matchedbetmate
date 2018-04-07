@@ -6,6 +6,6 @@ namespace MatchedBetMate.iOS.Business.Interfaces.Strategy
     public interface IBetCalculatorStrategy
     {
         BetType BetType { get; }
-        BetCalculationModel Calculate(double backStake, double backOdds, double layOdds, double layCommission);
+        BetCalculationModel Calculate(decimal backStake, decimal backOdds, decimal layOdds, decimal layCommission);
     }
 }

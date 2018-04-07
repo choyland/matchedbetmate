@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using MatchedBetMate.DTO.Bet;
+using MatchedBetMate.DTO.Enum;
 using MatchedBetMate.iOS.Business.Interfaces.Clients;
 using MatchedBetMate.iOS.Business.Interfaces.Providers;
 using MatchedBetMate.iOS.Business.Interfaces.Services;
@@ -38,7 +39,16 @@ namespace MatchedBetMate.iOS.Business.Services
         public async Task<bool> AddBet(BetViewModel newBet)
         {
             // TODO Map betviewmodel to CreateBetDto
-            var betDto = new CreateBetDto();
+            var betDto = new CreateBetDto
+            {
+                BackOdds = newBet.BackOdds,
+                BackStake = newBet.BackStake,
+                BetType = newBet.BetType,
+                Description = "TestingAddingBet",
+                LayCommission = newBet.LayCommission,
+                LayOdds = newBet.LayOdds,
+                Sport = Sport.Football
+            };
 
             var successfullyCreatedBet = await
                 _httpClient.ExecutePostRequest<CreateBetDto, BetDto>(betDto, _configProvider.CreateBetResourceUrl, true);

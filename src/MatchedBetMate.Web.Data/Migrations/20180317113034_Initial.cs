@@ -162,7 +162,7 @@ namespace MatchedBetMate.WebApi.Data.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     BetType = table.Column<int>(nullable: false),
                     Description = table.Column<string>(nullable: true),
-                    Profit = table.Column<double>(nullable: false),
+                    Profit = table.Column<decimal>(nullable: false),
                     Sport = table.Column<int>(nullable: false),
                     UserId = table.Column<int>(nullable: false),
                     UserId1 = table.Column<string>(nullable: true)

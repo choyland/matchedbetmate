@@ -5,7 +5,7 @@ namespace MatchedBetMate.iOS.Business.Interfaces.Services
 {
     public interface IBetCalculationService
     {
-        BetCalculationViewModel CalculateBet(BetType betType, double backStake, double backOdds, double layOdds,
-            double layCommission);
+        BetCalculationViewModel CalculateBet(BetType betType, decimal backStake, decimal backOdds, decimal layOdds,
+            decimal layCommission);
     }
 }

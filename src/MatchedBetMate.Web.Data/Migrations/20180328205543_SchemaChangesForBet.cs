@@ -26,43 +26,43 @@ namespace MatchedBetMate.WebApi.Data.Migrations
                 oldClrType: typeof(string),
                 oldNullable: true);
 
-            migrationBuilder.AddColumn<double>(
+            migrationBuilder.AddColumn<decimal>(
                 name: "BackCommission",
                 table: "Bets",
                 nullable: false,
                 defaultValue: 0.0);
 
-            migrationBuilder.AddColumn<double>(
+            migrationBuilder.AddColumn<decimal>(
                 name: "BackOdds",
                 table: "Bets",
                 nullable: false,
                 defaultValue: 0.0);
 
-            migrationBuilder.AddColumn<double>(
+            migrationBuilder.AddColumn<decimal>(
                 name: "BackStake",
                 table: "Bets",
                 nullable: false,
                 defaultValue: 0.0);
 
-            migrationBuilder.AddColumn<double>(
+            migrationBuilder.AddColumn<decimal>(
                 name: "LayCommission",
                 table: "Bets",
                 nullable: false,
                 defaultValue: 0.0);
 
-            migrationBuilder.AddColumn<double>(
+            migrationBuilder.AddColumn<decimal>(
                 name: "LayOdds",
                 table: "Bets",
                 nullable: false,
                 defaultValue: 0.0);
 
-            migrationBuilder.AddColumn<double>(
+            migrationBuilder.AddColumn<decimal>(
                 name: "LayStake",
                 table: "Bets",
                 nullable: false,
                 defaultValue: 0.0);
 
-            migrationBuilder.AddColumn<double>(
+            migrationBuilder.AddColumn<decimal>(
                 name: "Liability",
                 table: "Bets",
                 nullable: false,

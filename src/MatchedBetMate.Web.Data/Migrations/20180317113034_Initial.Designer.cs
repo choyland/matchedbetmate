@@ -31,7 +31,7 @@ namespace MatchedBetMate.WebApi.Data.Migrations
 
                     b.Property<string>("Description");
 
-                    b.Property<double>("Profit");
+                    b.Property<decimal>("Profit");
 
                     b.Property<int>("Sport");
 

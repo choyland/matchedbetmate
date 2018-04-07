@@ -14,17 +14,17 @@ namespace MatchedBetMate.DTO.Bet
         [EnumDataType(typeof(Sport))]
         public Sport Sport { get; set; }
         [Required]
-        public double BackStake { get; set; }
+        public decimal BackStake { get; set; }
         [Required]
-        public double BackOdds { get; set; }
+        public decimal BackOdds { get; set; }
         [Required]
-        public double BackCommission { get; set; }
+        public decimal BackCommission { get; set; }
         [Required]
-        public double LayOdds { get; set; }
+        public decimal LayOdds { get; set; }
         [Required]
-        public double LayCommission { get; set; }
-        public double LayStake { get; set; }
-        public double Liability { get; set; }
-        public double Profit { get; set; }
+        public decimal LayCommission { get; set; }
+        public decimal LayStake { get; set; }
+        public decimal Liability { get; set; }
+        public decimal Profit { get; set; }
     }
 }

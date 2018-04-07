@@ -26,11 +26,11 @@ namespace MatchedBetMate.iOS.ViewControllers
         async partial void AddBetButton_TouchUpInside(Foundation.NSObject sender)
         {
             var betType = (BetType)Convert.ToInt16(BetTypeSegment.SelectedSegment);
-            var backStake = double.Parse(BackStakeInput.Text, System.Globalization.CultureInfo.InvariantCulture);
-            var backOdds = double.Parse(BackOddsInput.Text, System.Globalization.CultureInfo.InvariantCulture);
-            var layOdds = double.Parse(LayOddsInput.Text, System.Globalization.CultureInfo.InvariantCulture);
-            var layCommission = double.Parse(LayCommissionInput.Text, System.Globalization.CultureInfo.InvariantCulture);
-            var layStake = double.Parse(LayStakeValueLabel.Text, System.Globalization.CultureInfo.InvariantCulture);
+            var backStake = decimal.Parse(BackStakeInput.Text, System.Globalization.CultureInfo.InvariantCulture);
+            var backOdds = decimal.Parse(BackOddsInput.Text, System.Globalization.CultureInfo.InvariantCulture);
+            var layOdds = decimal.Parse(LayOddsInput.Text, System.Globalization.CultureInfo.InvariantCulture);
+            var layCommission = decimal.Parse(LayCommissionInput.Text, System.Globalization.CultureInfo.InvariantCulture);
+            var layStake = decimal.Parse(LayStakeValueLabel.Text, System.Globalization.CultureInfo.InvariantCulture);
 
 
             var betToAdd = new BetViewModel
@@ -67,20 +67,20 @@ namespace MatchedBetMate.iOS.ViewControllers
             {
                 var betCalcViewModel = CalculateBet();
 
-                LayStakeValueLabel.Text = FormatWithPoundSign(betCalcViewModel.LayStake.ToString(CultureInfo.InvariantCulture));
-                LiabilityValueLabel.Text = FormatWithPoundSign(betCalcViewModel.Liability.ToString(CultureInfo.InvariantCulture));
-                BookmakerWinsValueLabel.Text = FormatWithPoundSign(betCalcViewModel.BookMakerWinProfit.ToString(CultureInfo.InvariantCulture));
-                ExchangeWinsValueLabel.Text = FormatWithPoundSign(betCalcViewModel.BookMakerWinProfit.ToString(CultureInfo.InvariantCulture));
+                LayStakeValueLabel.Text = FormatWithPoundSign(betCalcViewModel.LayStake.ToString("0.00"));
+                LiabilityValueLabel.Text = FormatWithPoundSign(betCalcViewModel.Liability.ToString("0.00"));
+                BookmakerWinsValueLabel.Text = FormatWithPoundSign(betCalcViewModel.BookMakerWinProfit.ToString("0.00"));
+                ExchangeWinsValueLabel.Text = FormatWithPoundSign(betCalcViewModel.BookMakerWinProfit.ToString("0.00"));
             }
         }
 
         private BetCalculationViewModel CalculateBet()
         {
             var betType =  (BetType)Convert.ToInt16(BetTypeSegment.SelectedSegment);
-            var backStake = double.Parse(BackStakeInput.Text, System.Globalization.CultureInfo.InvariantCulture);
-            var backOdds = double.Parse(BackOddsInput.Text, System.Globalization.CultureInfo.InvariantCulture);
-            var layOdds = double.Parse(LayOddsInput.Text, System.Globalization.CultureInfo.InvariantCulture);
-            var layCommission = double.Parse(LayCommissionInput.Text, System.Globalization.CultureInfo.InvariantCulture);
+            var backStake = decimal.Parse(BackStakeInput.Text, System.Globalization.CultureInfo.InvariantCulture);
+            var backOdds = decimal.Parse(BackOddsInput.Text, System.Globalization.CultureInfo.InvariantCulture);
+            var layOdds = decimal.Parse(LayOddsInput.Text, System.Globalization.CultureInfo.InvariantCulture);
+            var layCommission = decimal.Parse(LayCommissionInput.Text, System.Globalization.CultureInfo.InvariantCulture);
 
             return ViewModel.CalculateBet(betType, backStake, backOdds, layOdds, layCommission);
         }

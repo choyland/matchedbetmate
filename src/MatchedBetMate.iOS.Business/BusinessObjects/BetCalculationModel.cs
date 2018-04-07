@@ -6,9 +6,9 @@ namespace MatchedBetMate.iOS.Business.BusinessObjects
 {
     public class BetCalculationModel
     {
-        public double LayStake { get; set; }
-        public double Liability { get; set; }
-        public double BookMakerWinProfit { get; set; }
-        public double ExchangeWinProfit { get; set; }
+        public decimal LayStake { get; set; }
+        public decimal Liability { get; set; }
+        public decimal BookMakerWinProfit { get; set; }
+        public decimal ExchangeWinProfit { get; set; }
     }
 }

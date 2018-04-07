@@ -26,26 +26,26 @@ namespace MatchedBetMate.WebApi.Data.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<double>("BackCommission");
+                    b.Property<decimal>("BackCommission");
 
-                    b.Property<double>("BackOdds");
+                    b.Property<decimal>("BackOdds");
 
-                    b.Property<double>("BackStake");
+                    b.Property<decimal>("BackStake");
 
                     b.Property<int>("BetType");
 
                     b.Property<string>("Description")
                         .IsRequired();
 
-                    b.Property<double>("LayCommission");
+                    b.Property<decimal>("LayCommission");
 
-                    b.Property<double>("LayOdds");
+                    b.Property<decimal>("LayOdds");
 
-                    b.Property<double>("LayStake");
+                    b.Property<decimal>("LayStake");
 
-                    b.Property<double>("Liability");
+                    b.Property<decimal>("Liability");
 
-                    b.Property<double>("Profit");
+                    b.Property<decimal>("Profit");
 
                     b.Property<int>("Sport");
 
