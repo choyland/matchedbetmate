@@ -25,5 +25,7 @@ namespace MatchedBetMate.DTO.Bet
         public double LayCommission { get; set; }
         public double LayStake { get; set; }
         public double Liability { get; set; }
+
+        public BetStatus BetStatus { get; set; }
     }
 }

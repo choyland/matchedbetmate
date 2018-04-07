@@ -4,6 +4,7 @@ using MatchedBetMate.iOS.Business.Interfaces.Providers;
 using MatchedBetMate.iOS.Infrastructure.Reachability.Enum;
 using RestSharp.Portable;
 using RestSharp.Portable.HttpClient;
+using RestSharp.Portable.Serializers;
 using IHttpClient = MatchedBetMate.iOS.Business.Interfaces.Clients.IHttpClient;
 
 namespace MatchedBetMate.iOS.Infrastructure.Clients
@@ -19,7 +20,7 @@ namespace MatchedBetMate.iOS.Infrastructure.Clients
         {
             CheckNetwork();
 
-            var request = new RestRequest(resource, Method.GET);
+            var request = GetRequest(resource, Method.GET);
 
             if (isAuthenticated)
             {
@@ -36,10 +37,10 @@ namespace MatchedBetMate.iOS.Infrastructure.Clients
 
         public async Task<TResponse> ExecutePostRequest<TRequest, TResponse>(TRequest requestContract, string resource, bool isAuthenticated)
         {
-            //CheckNetwork();
+            CheckNetwork();
 
-            var request = new RestRequest(resource, Method.POST);
-
+            var request = GetRequest(resource, Method.POST);
+            
             if (isAuthenticated)
             {
                 AddAuthorizationHeader(request);
@@ -59,7 +60,7 @@ namespace MatchedBetMate.iOS.Infrastructure.Clients
         {
             CheckNetwork();
 
-            var request = new RestRequest(resource, Method.PUT);
+            var request = GetRequest(resource, Method.PUT);
 
             if (isAuthenticated)
             {
@@ -80,7 +81,7 @@ namespace MatchedBetMate.iOS.Infrastructure.Clients
         {
             CheckNetwork();
 
-            var request = new RestRequest(resource, Method.DELETE);
+            var request = GetRequest(resource, Method.DELETE);
 
             if (isAuthenticated)
             {
@@ -92,6 +93,14 @@ namespace MatchedBetMate.iOS.Infrastructure.Clients
                 var response = await client.Execute(request);
                 CheckResponse(response);
             }
+        }
+
+        private static RestRequest GetRequest(string resource, Method httpMethod)
+        {
+            var request = new RestRequest(resource, httpMethod);
+            request.AddHeader("Accept", "application/json");
+
+            return request;
         }
 
         private void AddAuthorizationHeader(RestRequest request)

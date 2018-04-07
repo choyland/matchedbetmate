@@ -1,4 +1,6 @@
-﻿using MatchedBetMate.DTO.Enum;
+﻿using System;
+using MatchedBetMate.DTO.Enum;
+using MatchedBetMate.iOS.Business.BusinessObjects;
 using MatchedBetMate.iOS.Business.Interfaces.Factory;
 using MatchedBetMate.iOS.Business.Interfaces.Services;
 using MatchedBetMate.iOS.Model.ViewModel;
@@ -23,6 +25,8 @@ namespace MatchedBetMate.iOS.Business.Services
 
             var calculation = betCalculationStrategy.Calculate(backStake, backOdds, layOdds, decimalLayCommission);
 
+            RoundCalculationValuesToTwoDecimalPlaces(calculation);
+
             var betCalculationViewModel = new BetCalculationViewModel
             {
                 BookMakerWinProfit = calculation.BookMakerWinProfit,
@@ -32,6 +36,14 @@ namespace MatchedBetMate.iOS.Business.Services
             };
 
             return betCalculationViewModel;
+        }
+
+        public void RoundCalculationValuesToTwoDecimalPlaces(BetCalculationModel betCalculationModel)
+        {
+            betCalculationModel.BookMakerWinProfit = Math.Round(betCalculationModel.BookMakerWinProfit, 2);
+            betCalculationModel.ExchangeWinProfit = Math.Round(betCalculationModel.ExchangeWinProfit, 2);
+            betCalculationModel.LayStake = Math.Round(betCalculationModel.LayStake, 2);
+            betCalculationModel.Liability = Math.Round(betCalculationModel.Liability, 2);
         }
     }
 }

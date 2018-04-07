@@ -24,7 +24,7 @@ namespace MatchedBetMate.iOS.Business.Services
 
             var registerDto = new RegisterDto {Email = userName, Password = password};
 
-            var response = await _httpClient.ExecutePostRequest<RegisterDto, object>(registerDto, "account/login", false);
+            var response = await _httpClient.ExecutePostRequest<RegisterDto, string>(registerDto, "account/login", false);
             
             if (response == null) return LoginStatus.Failure;
 

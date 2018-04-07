@@ -10,8 +10,10 @@ namespace MatchedBetMate.iOS.Infrastructure.SecureStorage
 
         public string AuthToken
         {
-            get => GetCredential(AuthTokenKey);
-            set => SaveCredentials(AuthTokenKey, value);
+            get;
+            set;
+            //get => GetCredential(AuthTokenKey);
+            //set => SaveCredentials(AuthTokenKey, value);
         }
 
         public void DeleteCredentials()

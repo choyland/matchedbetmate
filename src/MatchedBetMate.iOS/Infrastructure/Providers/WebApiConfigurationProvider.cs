@@ -22,9 +22,11 @@ namespace MatchedBetMate.iOS.Infrastructure.Providers
             }
         }
 
-        public string GetBetsResourceUrl { get; }
-        public string CreateBetResourceUrl { get; }
-        public string UpdateBetResourceUrl { get; }
-        public string DeleteBetResourceUlr { get; }
+        public string BaseUrl => "http://192.168.0.10/MatchedBetMate.WebApi/api/";
+
+        public string GetBetsResourceUrl => "bets/";
+        public string CreateBetResourceUrl => GetBetsResourceUrl;
+        public string UpdateBetResourceUrl => GetBetsResourceUrl;
+        public string DeleteBetResourceUlr => GetBetsResourceUrl;
     }
 }

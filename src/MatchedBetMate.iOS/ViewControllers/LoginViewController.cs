@@ -18,6 +18,10 @@ namespace MatchedBetMate.iOS.ViewControllers
         {
             base.ViewDidLoad();
 
+            EmailAddressInput.Text = "charliehoyland2@gmail.com";
+            PasswordInput.Text = "123Hello!";
+            PasswordInput.SecureTextEntry = true;
+
             ConfigureGestureRecognisers();
             ConfigureTextInputEvents();
 

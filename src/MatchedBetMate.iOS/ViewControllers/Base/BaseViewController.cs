@@ -76,6 +76,7 @@ namespace MatchedBetMate.iOS.ViewControllers.Base
             loadingView.AddSubview(uiIndicator);
 
             View.AddSubview(loadingView);
+            View.BringSubviewToFront(loadingView);
         }
 
         private static void HideLoadingView(UIView loadingView)

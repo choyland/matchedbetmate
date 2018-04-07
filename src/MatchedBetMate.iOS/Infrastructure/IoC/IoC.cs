@@ -35,6 +35,8 @@ namespace MatchedBetMate.iOS.Infrastructure.IoC
         {
             container.Register<ICredentialsService, CredentialsService>();
             container.Register<IAuthenticationService, AuthenticationService>();
+            container.Register<IBetCalculationService, BetCalculationService>();
+            container.Register<IBetService, BetService>();
         }
 
         private static void RegisterFactories(TinyIoCContainer container)

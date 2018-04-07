@@ -34,7 +34,7 @@ namespace MatchedBetMate.WebApi.Controllers
             if (!result.Succeeded) throw new ApplicationException("INVALID_LOGIN_ATTEMPT");
 
             var appUser = UserManager.Users.SingleOrDefault(r => r.Email == model.Email);
-            return GenerateJwtToken(model.Email, appUser);
+            return Ok(GenerateJwtToken(model.Email, appUser)); 
         }
 
         [HttpPost("Register")]
@@ -50,7 +50,7 @@ namespace MatchedBetMate.WebApi.Controllers
             if (!result.Succeeded) throw new ApplicationException("UNKNOWN_ERROR");
 
             await _signInManager.SignInAsync(user, false);
-            return GenerateJwtToken(model.Email, user);
+            return Ok(GenerateJwtToken(model.Email, user));
         }
 
         private object GenerateJwtToken(string email, IdentityUser user)

@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 using MatchedBetMate.DTO.Enum;
 using MatchedBetMate.iOS.Business.Interfaces.Services;
 using MatchedBetMate.iOS.Model.ViewModel;
@@ -66,10 +67,10 @@ namespace MatchedBetMate.iOS.ViewControllers
             {
                 var betCalcViewModel = CalculateBet();
 
-                LayStakeValueLabel.Text = betCalcViewModel.LayStake.ToString();
-                LiabilityValueLabel.Text = betCalcViewModel.Liability.ToString();
-                BookmakerWinsValueLabel.Text = betCalcViewModel.BookMakerWinProfit.ToString();
-                ExchangeWinsValueLabel.Text = betCalcViewModel.BookMakerWinProfit.ToString();
+                LayStakeValueLabel.Text = FormatWithPoundSign(betCalcViewModel.LayStake.ToString(CultureInfo.InvariantCulture));
+                LiabilityValueLabel.Text = FormatWithPoundSign(betCalcViewModel.Liability.ToString(CultureInfo.InvariantCulture));
+                BookmakerWinsValueLabel.Text = FormatWithPoundSign(betCalcViewModel.BookMakerWinProfit.ToString(CultureInfo.InvariantCulture));
+                ExchangeWinsValueLabel.Text = FormatWithPoundSign(betCalcViewModel.BookMakerWinProfit.ToString(CultureInfo.InvariantCulture));
             }
         }
 
@@ -92,5 +93,10 @@ namespace MatchedBetMate.iOS.ViewControllers
                 !string.IsNullOrWhiteSpace(LayOddsInput.Text) &&
                 !string.IsNullOrWhiteSpace(LayCommissionInput.Text);
          }
+
+        private string FormatWithPoundSign(string calculationValue)
+        {
+            return $"£{calculationValue}";
+        }
     }
 }

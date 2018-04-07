@@ -19,7 +19,7 @@ namespace MatchedBetMate.iOS.ViewModels
         public async Task<bool> Login(string email, string password)
         {
             // TEMP
-            return true;
+            //return true;
 
             if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
             {
